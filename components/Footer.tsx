@@ -31,24 +31,27 @@ export const FooterImpl: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>Copyright © 2022 by HyeonSoo Choi ({config.author})</div>
-
-      <div className={styles.settings}>
-        {hasMounted && (
-          <a
-            className={styles.toggleDarkMode}
-            href='#'
-            role='button'
-            onClick={onToggleDarkMode}
-            title='Toggle dark mode'
-          >
-            {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
-          </a>
-        )}
+      <div className={styles.copyright}>
+        Copyright © 2022 by HyeonSoo Choi ({config.author})
       </div>
 
-      <div className={styles.social}>
-        {config.twitter && (
+      <div className={styles.footer_icon}>
+        <div className={styles.settings} style={{ marginRight: '5px' }}>
+          {hasMounted && (
+            <a
+              className={styles.toggleDarkMode}
+              href='#'
+              role='button'
+              onClick={onToggleDarkMode}
+              title='Toggle dark mode'
+            >
+              {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+            </a>
+          )}
+        </div>
+
+        <div className={styles.social} style={{ marginLeft: '5px' }}>
+          {/* {config.twitter && (
           <a
             className={styles.twitter}
             href={`https://twitter.com/${config.twitter}`}
@@ -58,9 +61,9 @@ export const FooterImpl: React.FC = () => {
           >
             <FaTwitter />
           </a>
-        )}
+        )} */}
 
-        {config.zhihu && (
+          {/* {config.zhihu && (
           <a
             className={styles.zhihu}
             href={`https://zhihu.com/people/${config.zhihu}`}
@@ -70,21 +73,21 @@ export const FooterImpl: React.FC = () => {
           >
             <FaZhihu />
           </a>
-        )}
+        )} */}
 
-        {config.github && (
-          <a
-            className={styles.github}
-            href={`https://github.com/${config.github}`}
-            title={`GitHub @${config.github}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaGithub />
-          </a>
-        )}
+          {config.github && (
+            <a
+              className={styles.github}
+              href={`https://github.com/${config.github}`}
+              title={`GitHub @${config.github}`}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FaGithub />
+            </a>
+          )}
 
-        {config.linkedin && (
+          {/* {config.linkedin && (
           <a
             className={styles.linkedin}
             href={`https://www.linkedin.com/in/${config.linkedin}`}
@@ -94,7 +97,8 @@ export const FooterImpl: React.FC = () => {
           >
             <FaLinkedin />
           </a>
-        )}
+        )} */}
+        </div>
       </div>
     </footer>
   )
